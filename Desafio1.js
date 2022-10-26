@@ -1,5 +1,5 @@
 class Usuario{
-    constructor (nombre='', apellido='', libros =[], mascotas =[]){
+    constructor (nombre='Matias', apellido='Riera', libros =[{nombre: 'El señor de las moscas', autor: "William Golding"},{nombre: "Fundicion", autor: "Isaac Asimov"}], mascotas =["Mara", "Blue"]){
         this.nombre= nombre
         this.apellido = apellido
         this.libros = libros
@@ -7,37 +7,45 @@ class Usuario{
     }
 
     getFullName() {
-        return (console.log(`${this.nombre} ${this.apellido}`)) 
+        const nombreCompleto = this.nombre +" "+ this.apellido
+        console.log(nombreCompleto)
+        return this.nombre, this.apellido
     }
 
-    addMascota(mascota){
-        this.mascotas.push(mascota)
+    addMascota(nombreMascota){ 
+        
+        this.mascotas.push(nombreMascota)
+        console.log(this.mascotas)
+        return console.log(this.mascotas)
     }
 
     countMascotas(){
-        const cantidad = this.mascotas.length
-        const text = cantidad > 1 ? `El usuario tiene ${cantidad} mascotas` : "Tiene una sola mascota"
-        return(console.log(`${this.nombre} ${cantidad === 0 ? 'No tiene mascotas': text}`))
+        let cantidad = this.mascotas.length
+        console.log(cantidad)
+        return cantidad
+        
     }
+
     addBook(nombre, autor){
         this.libros.push({nombre: nombre, autor: autor})
     }
-    getBookNames(){
-        const nombreLibros = this.libros.map((e)=>e.nombre)
-        return(console.log(nombreLibros))
+
+    getBookNames(){     
+        const nombreLibros = this.libros.map((e) => e.autor)
+        console.log(nombreLibros);
+        return nombreLibros
     }
 }
 
-const usuario = new Usuario('Matias', 'Riera')
+const usuario = new Usuario()
+
 usuario.getFullName()
 
-usuario.addMascota('Perro')
-usuario.addMascota('Gato')
+usuario.addMascota(nombreMascota="Morris")
+
 usuario.countMascotas()
 
-usuario.addBook("El Padrino", "Mario Puzo")
 usuario.addBook("The Witcher: El último deseo", " Andrzej Sapkowski")
-usuario.addBook("Metro 2033", "Dmitri Glujovski")
-usuario.getBookNames()
 
+usuario.getBookNames()
 
