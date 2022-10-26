@@ -7,25 +7,24 @@ class Usuario{
     }
 
     getFullName() {
-        console.log(`${this.nombre} ${this.apellido}`) 
+        return (console.log(`${this.nombre} ${this.apellido}`)) 
     }
 
-    addMascota(){
-        this.mascotas.push(this.mascotas)
-        console.log(this.mascotas[0]);
+    addMascota(mascota){
+        this.mascotas.push(mascota)
     }
 
     countMascotas(){
         const cantidad = this.mascotas.length
         const text = cantidad > 1 ? `El usuario tiene ${cantidad} mascotas` : "Tiene una sola mascota"
-        console.log(`${this.nombre} ${cantidad === 0 ? 'No tiene mascotas': text}`)
+        return(console.log(`${this.nombre} ${cantidad === 0 ? 'No tiene mascotas': text}`))
     }
-    addBook(libro, autor){
-        this.libros.push({libro: libro, autor: autor})
+    addBook(nombre, autor){
+        this.libros.push({nombre: nombre, autor: autor})
     }
     getBookNames(){
-        const nombreLibros = this.libros.map((e)=>e.libro)
-        console.log(nombreLibros)
+        const nombreLibros = this.libros.map((e)=>e.nombre)
+        return(console.log(nombreLibros))
     }
 }
 
