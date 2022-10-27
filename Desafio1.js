@@ -39,7 +39,7 @@ class Usuario{
 
 const usuario = new Usuario()
 
-usuario.getFullName("Matias")
+usuario.getFullName()
 
 usuario.addMascota("Morris")
 
