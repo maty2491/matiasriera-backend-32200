@@ -1,5 +1,5 @@
 class Usuario{
-    constructor (nombre='Matias', apellido='Riera', libros =[{nombre: 'El señor de las moscas', autor: "William Golding"},{nombre: "Fundicion", autor: "Isaac Asimov"}], mascotas =["Mara", "Blue"]){
+    constructor (nombre='', apellido='', libros =[], mascotas =[]){
         this.nombre= nombre
         this.apellido = apellido
         this.libros = libros
@@ -9,7 +9,7 @@ class Usuario{
     getFullName() {
         const nombreCompleto = this.nombre +" "+ this.apellido
         console.log(nombreCompleto)
-        return this.nombre, this.apellido
+        return `${this.nombre} ${this.apellido}`
     }
 
     addMascota(nombreMascota){ 
@@ -39,9 +39,9 @@ class Usuario{
 
 const usuario = new Usuario()
 
-usuario.getFullName()
+usuario.getFullName("Matias")
 
-usuario.addMascota(nombreMascota="Morris")
+usuario.addMascota("Morris")
 
 usuario.countMascotas()
 
