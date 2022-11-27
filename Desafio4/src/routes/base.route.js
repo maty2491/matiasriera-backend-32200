@@ -13,4 +13,3 @@ router.route('/').get((req, res) => {
 
 export default router
 
-// RETORNAR EL VIDEO EN 1:01:07

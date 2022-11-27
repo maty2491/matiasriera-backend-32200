@@ -32,6 +32,12 @@ const productos = [
         title: 'Caja Mesa Boogie 4x10 Traditional Power House Made In Usa',
         price: 708484.76,
         thumbnail: 'https://http2.mlstatic.com/D_NQ_NP_615314-MLA48110054685_112021-O.webp'
+    },
+    {
+        id: 6,
+        title: 'Caja',
+        price: 15000,
+        thumbnail: 'https://http2.mlstatic.com/D_NQ_NP_615314-MLA48110054685_112021-O.webp'
     }
 ]
 
@@ -67,7 +73,7 @@ router.route('/').get((req, res) => {
 router
     .route('/:id')
     .put((req, res) => {
-        const { id } = req.params
+        const { id } = Number(req.params.id)
         const { title, price } = req.body
         const prodToUpdateIndex = productos.find(producto => producto.id === Number(id))
         if (!prodToUpdateIndex) {
@@ -82,7 +88,7 @@ router
     .delete((req, res) => {
         const { id } = req.params
         const prodToUpdateIndex = productos.findIndex((producto) => producto.id === Number(id))
-        const prodToDelete = productos(prodToUpdateIndex)
+        const prodToDelete = productos[prodToUpdateIndex]
         if (!prodToDelete) {
             return req.status(404).json({ status: "Not Found", data: null })
         }
