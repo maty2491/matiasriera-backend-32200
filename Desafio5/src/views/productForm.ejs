@@ -14,15 +14,20 @@
     <div class="container-fluid">
         <div class="row">
         <h1>Carga de productos</h1>
-        <form action="/productos" method="post">
-            <input type="text" placeholder="Nombre" name="name" class="m-2"><br>
-            <input type="number" placeholder="Precio" name="price" class="m-2"><br>
-            <input type="text" placeholder="Imagen" name="thumbnail" class="m-2"><br>
-            <input type="submit" value="Cargar producto" class="m-2">
+        <form action="/productosejs" method="post">
+            <input type="text" placeholder="Nombre" name="name" class="m-2" id="nom" required><br>
+            <input type="number" placeholder="Precio" name="price" class="m-2" id="pre" required><br>
+            <input type="text" placeholder="Imagen" name="thumbnail" class="m-2" id="img" required><br>
+            <input type="submit" value="Cargar producto" class="m-2" id="validacion">
         </form>
         </div>
         <button class="btn btn-success m-3" id="viewProd">Ver productos</button>
     </div>
+    <script>
+        if(!'nom' && !'pre' && !'img'){
+            alert("tenes que llenar los datos")        
+        }
+    </script>
     <script>
         const formButton = document.getElementById('viewProd')
 

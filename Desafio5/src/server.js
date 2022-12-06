@@ -12,7 +12,7 @@ app.use(json())
 app.use(urlencoded({extended: true}))
 
 app.set("view engine", "ejs")
-app.set("view engine", "pug")
+/* app.set("view engine", "pug")
 app.set("view engine", "hbs")
 app.engine('hbs', engine({
     extname: '.hbs',
@@ -21,7 +21,7 @@ app.engine('hbs', engine({
     partialsDir: join(__dirname, '/views/partials'),
 })
 )
-
+ */
 app.set('views', __dirname + '/views')
 
 app.use('/', routes)
