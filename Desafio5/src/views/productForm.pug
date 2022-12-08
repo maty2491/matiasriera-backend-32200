@@ -7,12 +7,12 @@ head
 .container-fluid
     .row
         h1 Carga de productos en PUG
-        form(action='/productos' method='post')
+        form(action='/productospug' method='post')
             input.m-2(type='text' placeholder='Nombre' name='name')
             br
             input.m-2(type='number' placeholder='Precio' name='price')
             br
-            input.m-2(type='text' placeholder='Imagen' name='thumbnail')
+            input.m-2(type='file' placeholder='Imagen' name='thumbnail')
             br
             input.m-2(type='submit' value='Cargar producto')
     button#viewProd.btn.btn-success.m-3 Ver productos

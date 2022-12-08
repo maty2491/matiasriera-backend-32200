@@ -13,22 +13,21 @@ head
                 th Precio
                 th Imagen
         tbody
-            - if(products.length &gt; 0) {
-            - products.forEach(product=&gt; { 
+            - if(products.length > 0) {
+            - products.forEach(product => {          
             tr
                 td
                     .d-flex.align-items-center
                         .ms-3
-                            p.fw-bold.mb-1
-                                - product.name
+                            p.fw-bold.mb-1- #{product.name}
                 td
-                    p.fw-normal.mb-1 $ - product.price
+                    p.fw-normal.mb-1 $ #{product.price}
                 td
-                    img.rounded-circle(src='- product.thumbnail' alt='' style='width: 45px; height: 45px')
+                     img.rounded-circle(src=" #{product.thumbnail}" style='width: 45px; height: 45px')
                         - }) 
-                        - }else {
+                        - }else{
                 h1  No hay productos cargados
-                    -}
+                    - }
     button#formButton.btn.btn-primary.mt-3 Volver a carga de productos
 script.
     const formButton = document.getElementById('formButton')

@@ -8,8 +8,8 @@
             </tr>
         </thead>
         <tbody>
-            {{#if products.length> 0 }}
-                    {{#each product }}
+            {{#if products.[0] }}
+                    {{#each products }}
                     <tr>
                         <td>
                             <div class="d-flex align-items-center">
@@ -26,7 +26,7 @@
                                 class="rounded-circle" />
                         </td>
                     {{/each }}
-                            {{#else}}
+                            {{else}}
                                 <h1>No hay productos cargados</h1>
             {{/if}}
                     </tr>
@@ -39,6 +39,6 @@
     const formButton = document.getElementById('formButton')
 
     formButton.addEventListener('click', (e) => {
-        window.location = "/"
+        window.location = "/hbs"
     })
 </script>

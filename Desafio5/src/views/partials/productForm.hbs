@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <div class="row">
         <h1>Carga de productos por HBS</h1>
-        <form action="/productos" method="post">
+        <form action="/productoshbs" method="post">
             <input type="text" placeholder="Nombre" name="name" class="m-2"><br>
             <input type="number" placeholder="Precio" name="price" class="m-2"><br>
             <input type="text" placeholder="Imagen" name="thumbnail" class="m-2"><br>
@@ -14,6 +14,6 @@
     const formButton = document.getElementById('viewProd')
 
     formButton.addEventListener('click', (e) => {
-        window.location = "/productos"
+        window.location = "/productoshbs"
     })
 </script>
