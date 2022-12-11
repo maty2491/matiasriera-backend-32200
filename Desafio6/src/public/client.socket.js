@@ -3,8 +3,7 @@ const messageForm = document.getElementById('messageForm')
 const usernameInput = document.getElementById('usernameInput')
 const messageInput = document.getElementById('messageInput')
 const messagesPool = document.getElementById('messagesPool')
-const fecha = new Date().toLocaleDateString()
-const hora = new Date().toLocaleTimeString()
+const date = new Date().toLocaleString("es-AR");
 
 const sendMessage = (messageInfo) => {
     socket.emit('client:message', messageInfo)
@@ -14,7 +13,7 @@ const renderMessage = (messagesData) => {
     const html = messagesData.map(messageInfo => {
         return `
         <div>
-            <strong>${messageInfo.username}(${fecha}-${hora}): </strong>
+            <strong>${messageInfo.username}(${date}): </strong>
             <em>${messageInfo.message}</em>
         </div> `
     }).join(' ')

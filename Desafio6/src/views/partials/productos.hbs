@@ -1,0 +1,41 @@
+
+<div class="container">
+<table class="table align-middle mb-0 bg-white">
+    <thead class="bg-light">
+        <tr>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Imagen</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#if products.[0] }}
+        {{#each products }}
+        <tr>
+            <td>
+                <div class="d-flex align-items-center">
+                    <div class="ms-3">
+                        <p class="fw-bold mb-1">
+                            {{this.title}}
+                        </p>
+
+                    </div>
+                </div>
+            </td>
+            <td>
+                <p class="fw-normal mb-1">
+                    $ {{this.price}}
+                </p>
+            </td>
+            <td>
+                <img src="{{this.thumbnail}}" alt="" style="width: 45px; height: 45px" class="rounded-circle" />
+            </td>
+            {{/each}}
+            {{else}}
+            <h1 class="text-center">No hay productos cargados</h1>
+            {{/if}}
+        </tr>
+    </tbody>
+</table>
+</div>
+{{> chat}}
