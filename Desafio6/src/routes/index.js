@@ -12,7 +12,6 @@ router.get('/', (req, res) => {
     res.render('partials/formProducto.hbs', { products })
 })
 
-
 router.post('/', (req, res) => {
     const { title, price, thumbnail } = req.body
     products.push({ title, price, thumbnail })

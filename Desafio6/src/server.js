@@ -14,7 +14,7 @@ app.use(express.static(__dirname + "/public"))
 const products = []
 
 const expressServer = app.listen(3000, () => {
-    console.log("Server listening on port 8080");
+    console.log("Server listening on port 3000");
 })
 
 const io = new IOServer(expressServer)
