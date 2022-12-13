@@ -1,10 +1,7 @@
 import { Router } from "express"
 
 const router = Router()
-const products = [{
-    name: "Windows",
-    price: 100,
-    thumbnail: "https://cdn3.iconfinder.com/data/icons/logos-brands-3/24/logo_brand_brands_logos_excel-512.png"
+const products = [{   
 }]
 
  router.get("/ejs", (req, res) => {
