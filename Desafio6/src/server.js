@@ -13,24 +13,6 @@ app.use(urlencoded({ extended: true }))
 app.use(express.static(__dirname + "/public"))
 const products = []
 
-const expressServer = app.listen(3000, () => {
-    console.log("Server listening on port 3000");
-})
-
-const io = new IOServer(expressServer)
-const messages = []
-
-io.on('connection', (socket) => {
-    console.log(`New connection established, socket ID: ${socket.id}`);
-    socket.emit('server:message')
-    socket.on('client:message', (messageInfo) => {
-        messages.push(messageInfo)
-        io.emit('server:message', messages)
-        fs.writeFileSync("./chat.txt", JSON.stringify(messages))
-        
-    })
-})
-
 app.set("view engine", "hbs")
 app.engine('hbs', engine({
     extname: '.hbs',
@@ -42,3 +24,24 @@ app.engine('hbs', engine({
 
 app.set('views', __dirname + '/views')
 app.use('/', routes)
+
+const expressServer = app.listen(3000, () => {
+    console.log("Server listening on port 3000");
+})
+
+const io = new IOServer(expressServer)
+const messages = []
+
+io.on('connection', (socket) => {
+    const messageInfo = JSON.parse(fs.readFileSync("./chat.txt"))    
+    console.log(`New connection established, socket ID: ${socket.id}`);
+    socket.emit('server:message', messageInfo)
+    socket.on('client:message', (messageInfo) => {
+        messages.push(messageInfo)
+        io.emit('server:message', messages)
+        fs.writeFileSync("./chat.txt", JSON.stringify(messages))
+        
+    })
+})
+
+
