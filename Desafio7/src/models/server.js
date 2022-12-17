@@ -21,7 +21,7 @@ class Server {
     routes() {
 
         this.app.use('/api/productos', require('../routes/productos.route.js'))
-        //this.app.use('/api/carrito'), require('../routes/carrito.route.js')
+        this.app.use('/api/carrito', require('../routes/carrito.route.js'))
     }    
 
     listen() {

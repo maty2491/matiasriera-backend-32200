@@ -1,10 +1,11 @@
 const { Router } = require('express')
-const { carritoGet, carritoPut, carritoPost, carritoDelete } = require('../controllers/carrito')
+const { generarCarrito, deleteCarrito, agregarProductoID, getCarritoById, deleteProductoById  } = require('../controllers/carrito')
 const router = Router()
 
-router.get('/:id?', carritoGet)
-router.put('/:id', carritoPut)
-router.post('/', carritoPost)
-router.delete('/:id', carritoDelete)
+router.post("/", generarCarrito);
+router.delete("/:id", deleteCarrito);
+router.post("/:id/productos", agregarProductoID);
+router.get("/:id/productos", getCarritoById);
+router.delete("/:id/productos", deleteProductoById);
 
 module.exports = router
