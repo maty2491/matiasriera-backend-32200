@@ -1,6 +1,6 @@
 import admin from "firebase-admin";
 import mongoose from "mongoose";
-import { config } from "../config/config.js";
+//import { config } from "../config/config.js";
 import serviceAccount from "./llave.json" assert { type: "json" };
 
 let connectDb;
@@ -15,7 +15,7 @@ const connectFirebase = async (url) => {
   });
 };
 
-if (config.database === "MONGO") {
+if (true) {
   connectDb = connectMongo;
 } else {
   connectDb = connectFirebase;

@@ -1,12 +1,11 @@
 import {Router} from "express"
-import { generarCarrito, deleteCarrito, agregarProductoID, getCarritoById, deleteProductoById } from "../controllers/carritoController.js"
+import { carritoController } from "../controllers/carritoController.js"
 
 const router = Router()
 
-router.post("/", generarCarrito)
-router.delete("/:id", deleteCarrito)
-router.post("/:id/productos", agregarProductoID)
-router.get("/:id/productos", getCarritoById)
-router.delete("/:id/productos", deleteProductoById)
+router.post("/", carritoController.generarCarrito)
+router.delete("/:id", carritoController.deleteCarrito)
+router.post("/:id/productos", carritoController.agregarProducto)
+router.get("/:id/productos", carritoController.getCarritoById)
 
 export const carritoRouter = router

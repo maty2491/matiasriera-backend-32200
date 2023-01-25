@@ -8,7 +8,7 @@ app.use(json())
 
 app.use("/api", routes)
 
-mongoose.connect(config.dbUrl).then(()=>{
+mongoose.connect("mongodb+srv://admin:admin123@cluster0.cehr9g6.mongodb.net/test").then(()=>{
     console.log("Database connected")
     
 })

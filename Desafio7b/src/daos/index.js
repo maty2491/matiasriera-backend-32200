@@ -5,7 +5,7 @@ import { CarrMongoDaos } from "./carritoMongo.daos.js"
 let ProdDao
 let CarDao
 
-if (config.database === "MONGO") {
+if (true) {
   ProdDao = ProdMongoDao
   CarDao = CarrMongoDaos
 } else {
