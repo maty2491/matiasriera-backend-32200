@@ -1,4 +1,3 @@
-import getTime from "../helpers/getTime.js"
 import generarId from "../helpers/generarId.js"
 import fs from "fs";
 
@@ -20,9 +19,8 @@ const carritos = []
 const generarCarrito = (req, res) => {
     const carrito = new Carrito()
     carrito.id = generarId()
-    carrito.timestamp = getTime()
     carritos.push(carrito)
-    fs.writeFileSync("./db/carritos.txt", JSON.stringify(carritos, null, 2))
+    
     res.json(carrito)
 }
 
@@ -58,8 +56,7 @@ const agregarProductoID = async (req, res) => {
             res.status(404).json({ message: "Carrito no encontrado" })
         }
         else {
-            const productoToAdd = {
-                timestamp: getTime(),
+            const productoToAdd = {                
                 id: generarId(),
                 nombre: producto.nombre,
                 descripcion: producto.descripcion,

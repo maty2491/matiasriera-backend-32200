@@ -30,7 +30,7 @@ const obtenerProductos = async (req, res) => {
 
 /* const agregarProducto = async (req, res) => {
     const { name, id, description, code, url, price, stock } = req.body
-    const date = getTime()
+    
     productos.push({ name, id, description, code, url, price, stock, date })
     res.json(productos)
 } */
@@ -46,7 +46,7 @@ const obtenerProductos = async (req, res) => {
         }
         else {
             const { name, id, description, code, url, price, stock } = req.body
-            const date = getTime()
+            
             productos[index] = { name, id, description, code, url, price, stock, date }
             res.json(productos[index])
         }
