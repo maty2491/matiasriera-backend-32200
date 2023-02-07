@@ -24,7 +24,7 @@ app.use(
             mongoOptions
         }),
         cookie:{
-            maxAge: 600000
+            maxAge: 10000
         }
     })
 )

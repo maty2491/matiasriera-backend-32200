@@ -9,20 +9,19 @@ const registro = (req, res)=>{
 
  const perfil = (req, res)=>{
     const user = req.session.user_data
-    delete req.session.user_data    
+    //delete req.session.user_data    
     res.render('perfil.ejs', {
         user
     })
 } 
 
 const logout = (req, res) =>{
-    console.log(req.session.user_data);
     let user = req.session.user_data
-    console.log(user);
+    console.log(req.session.user_data);
     req.session.destroy()
     res.render('logout.ejs', {
         user
-    })
+    })    
 }
 
 export const controller = {inicioSesion, registro, perfil, logout}
