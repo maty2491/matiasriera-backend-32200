@@ -1,0 +1,17 @@
+<div class="container text-center my-3">
+    <div class="jumbotron" style="background-color: rgb(248, 62, 41);color: white;">
+        <h1>INICIO DE SESION INCORRECTO</h1>
+        <h4>Verifica tu usuario y contraseña o registrate con una cuenta nueva...</h4>
+        <button class="btn btn-warning my-5" onclick="volver()">Volver al inicio</button>
+    </div>
+</div>
+
+<script>
+    function redireccionar(pagina) {
+        location.href = pagina;
+    } 
+    function volver() {
+        console.log('Go Back to Login');
+        redireccionar('/login')
+    }
+</script>
