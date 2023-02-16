@@ -2,6 +2,7 @@ import { Router } from "express";
 import { authController } from "../controllers/index.js";
 // import { authMiddlewares } from "../middlewares/auth.middleware.js";
 import passport from "passport";
+import { randomController } from "../controllers/random.controller.js";
 
 const router = Router();
 
@@ -23,6 +24,9 @@ router.get("/logout", authController.logOut);
 //fails
 router.get("/fail-login", authController.getLoginFailiure);
 router.get("/fail-register", authController.getRegisterFailiure);
+
+router.get('/api/randoms', randomController.getRandom)
+router.get('/info', randomController.getInfo)
 
 //router
 //  .route("/logout")

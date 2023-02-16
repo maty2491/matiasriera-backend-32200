@@ -100,6 +100,8 @@ const logOut = (req, res) => {
   });
 };
 
+
+
 export const authController = {
   getLogin,
   getRegister,
