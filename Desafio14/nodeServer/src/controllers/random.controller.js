@@ -3,7 +3,7 @@ import yargs from "yargs";
 
 const getRandom = (req, res) => {
     const { cant } = req.query
-    const childProcess = fork('./child.js')
+    const childProcess = fork('../../child.js')
     const quantity = cant ? cant : 100000000
 
     childProcess.send(quantity);
