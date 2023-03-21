@@ -1,0 +1,10 @@
+{"level":40,"time":1679174516346,"pid":11800,"hostname":"DESKTOP-O2D41A3","method":"GET","url":"/api"}
+{"level":40,"time":1679174516478,"pid":11800,"hostname":"DESKTOP-O2D41A3","method":"GET","url":"/favicon.ico"}
+{"level":40,"time":1679174525865,"pid":11800,"hostname":"DESKTOP-O2D41A3","method":"GET","url":"/api"}
+{"level":40,"time":1679174547081,"pid":5456,"hostname":"DESKTOP-O2D41A3","method":"GET","url":"/api"}
+{"level":40,"time":1679174554721,"pid":5456,"hostname":"DESKTOP-O2D41A3","method":"GET","url":"/api"}
+{"level":50,"time":1679174578895,"pid":5456,"hostname":"DESKTOP-O2D41A3","error":"aah","msg":"Error =>"}
+{"level":40,"time":1679174606776,"pid":5456,"hostname":"DESKTOP-O2D41A3","method":"GET","url":"/api/"}
+{"level":50,"time":1679174611117,"pid":5456,"hostname":"DESKTOP-O2D41A3","error":"aah","msg":"Error =>"}
+{"level":40,"time":1679174618632,"pid":5456,"hostname":"DESKTOP-O2D41A3","method":"GET","url":"/saludo"}
+{"level":40,"time":1679176753553,"pid":4596,"hostname":"DESKTOP-O2D41A3","method":"GET","url":"/"}

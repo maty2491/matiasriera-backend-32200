@@ -5,12 +5,15 @@
   "main": "./src/server.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon ."
+    "test": "curl -X GET 'http://localhost:8080/newUser?username=matias&password=1234' && node benchmark.js",
+    "start": "0x server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "autocannon": "^7.10.0",
+    "compression": "^1.7.4",
     "express": "^4.18.2",
     "pino": "^8.11.0",
     "pino-multi-stream": "^6.0.0"
